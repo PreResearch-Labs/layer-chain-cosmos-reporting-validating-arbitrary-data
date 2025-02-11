@@ -118,6 +118,7 @@ func (c *Client) HandleBridgeDepositTxInChannel(ctx context.Context, data TxChan
 
 		data.NumRetries--
 		c.txChan <- data
+		return
 	}
 
 	var bridgeDepositMsg *oracletypes.MsgSubmitValue
@@ -168,6 +169,7 @@ func (c *Client) BroadcastTxMsgToChain() {
 
 		select {
 		case <-done:
+			c.logger.Info("Returned successfully from broadcasting ", obj)
 			cancel()
 		case <-ctx.Done():
 			c.logger.Error("broadcasting tx timed out")
