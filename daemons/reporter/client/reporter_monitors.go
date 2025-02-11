@@ -78,7 +78,7 @@ func (c *Client) MonitorCyclelistQuery(ctx context.Context, wg *sync.WaitGroup) 
 
 func (c *Client) MonitorTokenBridgeReports(ctx context.Context, wg *sync.WaitGroup) {
 	defer wg.Done()
-	ticker := time.NewTicker(10 * time.Second)
+	ticker := time.NewTicker(20 * time.Second)
 	defer ticker.Stop()
 
 	for {
