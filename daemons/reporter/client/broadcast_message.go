@@ -118,6 +118,7 @@ func (c *Client) HandleBridgeDepositTxInChannel(ctx context.Context, data TxChan
 
 		data.NumRetries--
 		c.txChan <- data
+		return
 	}
 
 	var bridgeDepositMsg *oracletypes.MsgSubmitValue
