@@ -62,24 +62,24 @@ module.exports = {
           "nick lucian brenda kevin sam fiscal patch fly damp ocean produce wish",
         count: 40,
       },
-      forking: {
-        url: process.env.NODE_URL,
-        blockNumber: 19891853
-      },
+      // forking: {
+      //   url: process.env.NODE_URL,
+      //   blockNumber: 19891853
+      // },
       allowUnlimitedContractSize: true
     } ,
     sepolia: {
-      url: `${process.env.NODE_URL_SEPOLIA}`,
+      url: `${process.env.NODE_URL_SEPOLIA_TESTNET}`,
       accounts: [process.env.TESTNET_PK],
       gas: 9000000 ,
       gasPrice: 5000000000
     } ,
-    mainnet_testnet: {
-      url: `${process.env.NODE_URL_MAINNET_TESTNET}`,
-      accounts: [process.env.TESTNET_PK],
-      gas: 8000000 ,
-      gasPrice: 1000000000
-    },
+    // mainnet_testnet: {
+    //   url: `${process.env.NODE_URL_MAINNET_TESTNET}`,
+    //   accounts: [process.env.TESTNET_PK],
+    //   gas: 8000000 ,
+    //   gasPrice: 1000000000
+    // },
   },
 
   // // #1

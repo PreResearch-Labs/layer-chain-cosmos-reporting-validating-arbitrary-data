@@ -11,7 +11,7 @@ const web3 = require('web3');
 
 //npx hardhat run scripts/deploy.js --network sepolia
 
-var _guardianaddress = "0x34Fae97547E990ef0E05e05286c51E4645bf1A85 " // sepolia multisig
+var _guardianaddress = "0x34Fae97547E990ef0E05e05286c51E4645bf1A85" // sepolia multisig
 var _token = "0x80fc34a2f9FfE86F41580F47368289C402DEc660" // sepolia real token
 var _tellorFlex = "0xB19584Be015c04cf6CFBF6370Fe94a58b7A38830" // sepolia flex
 
