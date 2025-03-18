@@ -1,10 +1,9 @@
-//require("@nomicfoundation/hardhat-toolbox");
-//require("hardhat-gas-reporter");
+require("hardhat-gas-reporter");
+require("@nomiclabs/hardhat-waffle");
 require("dotenv").config();
 require("@nomiclabs/hardhat-ethers");
-// require("hardhat-gas-reporter");
+require("@nomicfoundation/hardhat-verify");
 
-// require("@nomiclabs/hardhat-web3");
 
 module.exports = {
   solidity: {
@@ -71,30 +70,53 @@ module.exports = {
     } ,
     sepolia: {
       url: `${process.env.NODE_URL_SEPOLIA}`,
-      seeds: [process.env.TESTNET_PK],
+      accounts: [process.env.TESTNET_PK],
       gas: 9000000 ,
       gasPrice: 5000000000
     } ,
     mainnet_testnet: {
       url: `${process.env.NODE_URL_MAINNET_TESTNET}`,
-      seeds: [process.env.TESTNET_PK],
+      accounts: [process.env.TESTNET_PK],
       gas: 8000000 ,
       gasPrice: 1000000000
     },
   },
 
-  etherscan: {
-    apiKey: process.env.ETHERSCAN
-  },
+  // // #1
+  // etherscan: {
+  //   apiKey: process.env.ETHERSCAN
+  // },
 
-  //etherscan: {
-  //  apiKey: {
+  // // // #2
+  // etherscan: {
+  //   apiKey: {
+  //     "sepolia": process.env.ETHERSCAN,
+  //   },
+  //   customChains: [
+  //     {
+  //       network: "sepolia",
+  //       chainId: 11155111,
+  //       urls: {
+  //         apiURL: "https://api-sepolia.etherscan.io/api",
+  //         browserURL: "https://sepolia.etherscan.io/"
+  //       }
+  //     }
+  //   ]
+  // },
+
+  // #3
+  etherscan: {
+    apiKey: {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
-    //sepolia: process.env.ETHERSCAN
-    //mainnet: process.env.ETHERSCAN
- //}
-//},
+    sepolia: process.env.ETHERSCAN,
+    mainnet: process.env.ETHERSCAN
+    }
+  },
+  sourcify: {
+    enabled: true,
+  },
+
 
 
 
