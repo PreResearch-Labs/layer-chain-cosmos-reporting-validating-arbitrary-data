@@ -64,20 +64,20 @@ module.exports = {
         count: 40,
       },
       forking: {
-        url: process.env.NODE_URL,
-        blockNumber: 19891853
+        url: process.env.NODE_URL_MAINNET,
+        blockNumber: 22247348
       },
       allowUnlimitedContractSize: true
     } ,
     sepolia: {
-      url: `${process.env.NODE_URL_SEPOLIA}`,
+      url: `${process.env.NODE_URL_SEPOLIA_TESTNET}`,
       seeds: [process.env.TESTNET_PK],
       gas: 9000000 ,
       gasPrice: 5000000000
     } ,
-    mainnet_testnet: {
-      url: `${process.env.NODE_URL_MAINNET_TESTNET}`,
-      seeds: [process.env.TESTNET_PK],
+    mainnet: {
+      url: `${process.env.NODE_URL_MAINNET}`,
+      seeds: [process.env.MAINNET_PK],
       gas: 8000000 ,
       gasPrice: 1000000000
     },
